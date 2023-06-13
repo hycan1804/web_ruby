@@ -1,9 +1,13 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<% if current_user %>
+<div class="container">
+    <h1>MY PERSONAL HOME PAGES</h1>
+    <p>You can read more about me , or checkout my Blog</p>
+    <% if current_user %>
     <p>Logged in as <%= current_user.email %></p>
-    <%= link_to "Logout", destroy_user_session_path, method: :delete, data: { turbo_method: :delete} %>
-<% else %>
-<%= link_to"Login", new_user_session_path %>
-<%= link_to"Sign up", new_user_registration_path %>
-<% end %>
+    <%= link_to "Logout", destroy_user_session_path, class:"btn btn-secondary", method: :delete, data: {
+    turbo_method: :delete} %>
+    <% else %>
+    <%= link_to"Login", new_user_session_path, class:"btn btn-primary"  %>
+    <%= link_to"Sign up", new_user_registration_path, class:"btn btn-primary" %>
+    <% end %>
+    <%= link_to "Blog", posts_path, class:"btn btn-primary" %>
+</div>

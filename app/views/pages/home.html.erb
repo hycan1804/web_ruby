@@ -1,13 +1,13 @@
 <div class="container">
-    <h1>MY PERSONAL HOME PAGES</h1>
-    <p>You can read more about me , or checkout my Blog</p>
+    <h1>TRANG CHỦ CÁ NHÂN</h1>
+    <h5>Bạn có thể đăng nhập để xem Blog</h5>
     <% if current_user %>
-    <p>Logged in as <%= current_user.email %></p>
-    <%= link_to "Logout", destroy_user_session_path, class:"btn btn-secondary", method: :delete, data: {
+    <p>Đã đăng nhập tài khoản <%= current_user.email %></p>
+    <%= link_to "Đăng xuất", destroy_user_session_path, class:"btn btn-secondary", method: :delete, data: {
     turbo_method: :delete} %>
     <% else %>
-    <%= link_to"Login", new_user_session_path, class:"btn btn-primary"  %>
-    <%= link_to"Sign up", new_user_registration_path, class:"btn btn-primary" %>
+    <%= link_to"Đăng nhập", new_user_session_path, class:"btn btn-primary"  %>
+    <%= link_to"Đăng Ký", new_user_registration_path, class:"btn btn-primary" %>
     <% end %>
-    <%= link_to "Blog", posts_path, class:"btn btn-primary" %>
+    <%= link_to "Trang Blog", posts_path, class:"btn btn-primary" %>
 </div>

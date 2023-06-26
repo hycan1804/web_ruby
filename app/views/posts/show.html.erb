@@ -1,16 +1,16 @@
 <div class="container">
   <%= render @post %>
   <div>
-    <%= link_to "Edit this post", edit_post_path(@post),class:"btn btn-primary"%>
-    <%= link_to "Back to posts", posts_path, class:"btn btn-primary"%>
-    <%= button_to "Destroy this post", @post, method: :delete %>
+    <%= link_to "Chỉnh sửa bài", edit_post_path(@post),class:"btn btn-primary"%>
+    <%= link_to "Trở về", posts_path, class:"btn btn-primary"%>
+    <%= button_to "Xóa bài", @post, method: :delete %>
   </div>
 </div>
 <div class="container">
   <%= render 'comments/form',
     post: @post,
     comment: @post.comments.build,
-    submit_label:"Reply" %>
+    submit_label:"Trả lời" %>
     <% @comment.each do|comment|%>
       <%= render 'comments/comment',
       post: @post,

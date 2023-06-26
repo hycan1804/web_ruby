@@ -2,15 +2,15 @@
   <h1 style="color: green">
     <%= notice %>
   </h1>
-  <h1>Posts</h1>
+  <h1>BÀI VIẾT</h1>
   <div id="posts">
     <% @posts.each do |post| %>
       <%= render post %>
         <p>
-          <%= link_to "Show this post", post, class:"btn btn-primary" %>
+          <%= link_to "Hiện thị Bài viết", post, class:"btn btn-primary" %>
         </p>
     <% end %>
   </div>
-  <%= link_to "New post", new_post_path, class:"btn btn-primary" %>
+  <%= link_to "Tạo bài mới", new_post_path, class:"btn btn-primary" %>
 
 </div>

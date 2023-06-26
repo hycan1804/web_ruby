@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'search/index'
+  resources :categories
+  get 'search', to:"search#index"
   get 'users/profile'
   resources :posts do
     resources :comments 

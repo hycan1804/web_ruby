@@ -1,10 +1,6 @@
 <div class="container">
-<h1>CHỈNH SỬA BÀI</h1>
-
+<h1  class="text-4xl text-center mt-5 mb-4">CHỈNH SỬA BÀI</h1>
 <%= render "form", post: @post %>
-
-<br>
-
 <div>
   <%= link_to "Hiện thị bài viết", @post, class:"btn btn-primary" %> |
   <%= link_to "Trở về", posts_path, class:"btn btn-primary" %>

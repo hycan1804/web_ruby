@@ -73,5 +73,7 @@ end
 gem 'devise', github: 'heartcombo/devise', branch: 'main'
 gem 'simple_form', '~>5.2'
 gem "noticed", "~> 1.6"
-gem 'elasticsearch', '~> 7.17.7'
+gem 'elasticsearch', '~> 7.17'
 gem 'searchkick', '~> 5.1'
+gem 'faker'
+gem 'foreman', github: 'ddollar/foreman'

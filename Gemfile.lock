@@ -1,4 +1,10 @@
 GIT
+  remote: https://github.com/ddollar/foreman.git
+  revision: a5f9b78fa5cf657733c8a4cfd01b2c0c151b4fce
+  specs:
+    foreman (0.87.2)
+
+GIT
   remote: https://github.com/heartcombo/devise.git
   revision: ec0674523e7909579a5a008f16fb9fe0c3a71712
   branch: main
@@ -111,6 +117,8 @@ GEM
       faraday (~> 1)
       multi_json
     erubi (1.12.0)
+    faker (3.2.0)
+      i18n (>= 1.8.11, < 2)
     faraday (1.10.3)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
@@ -305,7 +313,9 @@ DEPENDENCIES
   capybara
   debug
   devise!
-  elasticsearch (~> 7.17.7)
+  elasticsearch (~> 7.17)
+  faker
+  foreman!
   image_processing (~> 1.2)
   importmap-rails
   jbuilder

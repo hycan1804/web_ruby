@@ -6,16 +6,20 @@
     <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
         <li>
             <%= link_to"Tạo bài viết mới", new_post_path, class:"dropdown-item" %>
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><%= link_to "Chỉnh sửa tài khoản", edit_user_registration_path, class: "dropdown-item" %></li>          
-                <li><hr class="dropdown-divider"></li>
-                <li><%= button_to "Đăng xuất", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>           </ul>
+            <li><%= link_to "Chỉnh sửa tài khoản", edit_user_registration_path, class: "dropdown-item" %></li>          
+            <% if current_user %>
+                <%= link_to "Trang cá nhân", user_path(id: current_user.id), class: "dropdown-item" %>
+              <% end %>
+            </li>    
+            <li><%= button_to "Đăng xuất", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li> 
+            <li>
+    </ul>
          </li>
 <% else %>
     <li class="nav-item">
         <%= link_to "Đăng ký",  new_user_registration_path, class:"nav-link"%>
     </li>
-    <li class="nav-item">
-         <%= link_to "Đăng nhập", new_user_session_path, class:"nav-link"%>
+        <li class="nav-item">
+            <%= link_to "Đăng nhập", new_user_session_path, class:"nav-link"%>
     </li>
 <% end %>

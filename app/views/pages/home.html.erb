@@ -1,13 +1,23 @@
-<div class="container">
-    <h1>TRANG CHỦ CÁ NHÂN</h1>
-    <h5>Bạn có thể đăng nhập để xem Blog</h5>
-    <% if current_user %>
-    <p>Đã đăng nhập tài khoản <%= current_user.email %></p>
-    <%= link_to "Đăng xuất", destroy_user_session_path, class:"btn btn-secondary", method: :delete, data: {
-    turbo_method: :delete} %>
-    <% else %>
-    <%= link_to"Đăng nhập", new_user_session_path, class:"btn btn-primary"  %>
-    <%= link_to"Đăng Ký", new_user_registration_path, class:"btn btn-primary" %>
-    <% end %>
-    <%= link_to "Trang Blog", posts_path, class:"btn btn-primary" %>
+<div style="text-align: center;">
+  <header>
+  <h1 style="text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+   font-weight:
+    bold;color: #3d85c6;
+    padding: 10px;
+    ">TRANG CHỦ CÁ NHÂN</h1>
+    <nav>
+      <% if current_user %>
+        <p>Đã đăng nhập tài khoản <%= current_user.email %></p>
+        <%= link_to "Đăng xuất", destroy_user_session_path, class:"btn btn-danger", method: :delete, data: {
+        turbo_method: :delete} %>
+      <% else %>
+        <%= link_to"Đăng nhập", new_user_session_path, class:"btn btn-success"  %>
+        <%= link_to"Đăng Ký", new_user_registration_path, class:"btn btn-success" %>
+      <% end %>
+      <%= link_to "Trang Blog", posts_path, class:"btn btn-primary" %>
+      <% if current_user %>
+        <%= link_to "Trang cá nhân", user_path(id: current_user.id), class: "btn btn-primary" %>
+      <% end %>
+    </nav>
+  </header>
 </div>
